@@ -15,6 +15,7 @@ export default function Contacto(props:data){
 
     return(
         <section className={ContactoStyle.content}>
+            
             <div className={ContactoStyle.contentSecond}>
                 <a href={props.github} target="_blank">
                     <Image
@@ -56,7 +57,7 @@ export default function Contacto(props:data){
                         setcopyemailclass(ContactoStyle.emailClose);
                         console.log("click");
                     }}>X</button>
-                </div>
+            </div>
 
     </section>
     )

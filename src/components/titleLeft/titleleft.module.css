@@ -1,0 +1,24 @@
+.content{
+    position:relative;
+    height:80px;
+    width:100%;
+    border-right:5px solid #70665E;
+    margin-top:-20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+
+.line{
+    position:relative;
+    width:75%;
+    height:5px;
+    background-color: #70665E;
+    margin-left:40px;
+}
+
+.title{
+    color:#70665E;
+    font-size:30px;
+}
