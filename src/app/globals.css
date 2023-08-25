@@ -86,13 +86,7 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ 
 }
 
 a {
@@ -104,4 +98,22 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.contentWeb{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  width:100vw;
+  height:auto;
+  min-height:100vh;
+  background-color:#272427;
+}
+
+
+@font-face {
+  font-family: "allura";
+  src:
+    url(../assets/fonts/Allura-Regular.ttf)
+   
 }
