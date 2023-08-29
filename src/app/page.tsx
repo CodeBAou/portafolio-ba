@@ -7,6 +7,7 @@ import TitleSection from '../components/titleSection/TitleSection';
 import LayoutSection from '@/components/layoutSection/layoutSection';
 import TitleLeftSection from '../components/titleLeft/titleLeft';
 import LayoutList from '../components/LayoutList/LayoutList';
+import FeatureProjects from '../components/Featured projects/FeaturedProjects';
 
 export default function Home() {
   return (
@@ -116,6 +117,13 @@ export default function Home() {
               </LayoutList>
           </LayoutSection>
 
+          <LayoutSection>
+              <TitleSection title="Proyectos"/>
+          </LayoutSection>
+
+
+          <FeatureProjects/>
+          
       </main>
     </>
   )
