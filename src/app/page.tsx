@@ -7,14 +7,71 @@ import TitleSection from '../components/titleSection/TitleSection';
 import LayoutSection from '@/components/layoutSection/layoutSection';
 import TitleLeftSection from '../components/titleLeft/titleLeft';
 import LayoutList from '../components/LayoutList/LayoutList';
-import FeatureProjects from '../components/Featured projects/FeaturedProjects';
+import FeatureProjects from '../components/Featuredprojects/FeaturedProjects';
+import Habilidades from '../components/Habilidades/habilidades';
+import Idiomas from '../components/Idiomas/Idiomas';
+import Link from 'next/link';
+import Head from 'next/head';
 
 export default function Home() {
+
+  const habilidades = [
+    {
+      src:'./html.svg',
+      href:"#",
+      alt:"icono habilidad html",
+      color:''
+    },
+    {
+      src:'./css.svg',
+      href:'#',
+      alt:'',
+      color:'white'
+    },
+    {
+      src:'./js.svg',
+      href:'#',
+      alt:'',
+      color:''
+    },
+    {
+      src:'./react.svg',
+      href:'#',
+      alt:'',
+      color:''
+    },
+    {
+      src:'./node.svg',
+      href:'#',
+      alt:'',
+      color:''
+    },
+    {
+      src:'./mongodb.svg',
+      href:'#',
+      alt:'',
+      color:''
+    },
+    {
+      src:'./nextjs.svg',
+      href:'#',
+      alt:'',
+      color:'white'
+    },
+  ];
+
   return (
     <>
+      <Head>
+      <Head>
+        <title>Codebaou</title>
+        <meta name="description" content="Pagina web persoal" />
+      
+      </Head>
+      </Head>
       <Header title="Boris Alvarez" rw="Frontend" lw1="Desarrollador Web" lw2="Diseño" image="/BorisPerfil.webp"/>
 
-      <main>
+      <main className={styles.main}>
       
           <Contacto github="https://github.com/CodeBAou" linkedin="https://www.linkedin.com/in/borisou" email="borisafou@gmail.com"/>
           
@@ -44,7 +101,7 @@ export default function Home() {
 
 
           <LayoutSection>
-              <TitleLeftSection title="Otra Formacion"/>
+              <TitleLeftSection title=" -- "/>
           </LayoutSection>
 
           <LayoutSection>
@@ -121,10 +178,38 @@ export default function Home() {
               <TitleSection title="Proyectos"/>
           </LayoutSection>
 
-
           <FeatureProjects/>
+
+          <LayoutSection>
+              <TitleSection title="Habilidades"/>
+          </LayoutSection>
+
           
+          <Habilidades datos={habilidades} />
+
+          <LayoutSection>
+              <TitleSection title="Idiomas"/>
+          </LayoutSection>
+
+          <LayoutSection>
+              <LayoutList>
+                <p className={styles.normal}> Estudiando Ingles  <span className={styles.textblue}>busuu</span></p>
+              </LayoutList>
+          </LayoutSection>
+
+          <LayoutSection>
+              <TitleLeftSection title=""/>
+          </LayoutSection>
       </main>
+
+      <footer className={styles.footer}>
+            <div className={styles.footeracces}> 
+              <Link href="/adminPage">Administracion</Link>
+            </div>
+            <div className={styles.footerlegal}>  
+              <p>Esta web pertenece a Boris Álvarez, todos los derechos reservados.</p> 
+            </div>
+      </footer>
     </>
   )
 }

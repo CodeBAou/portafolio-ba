@@ -1,0 +1,21 @@
+.input{
+    position:relative;
+    width:50%;
+    height:90%;
+    background-color: rgb(58, 58, 58);
+    border-radius:15px;
+    border:none;
+    color:rgb(255, 255, 255);
+    outline:none;
+    padding-left:10px;
+}
+
+.btn{
+    position:relative;
+    width:10%;
+    height:40px;
+    background-color: rgb(58, 58, 58);
+    color:white;
+    outline:none;
+    border:none;
+}

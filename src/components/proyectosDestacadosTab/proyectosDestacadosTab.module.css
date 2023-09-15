@@ -1,0 +1,41 @@
+.tabcontent{
+    position:relative;
+    width:100%;
+    height:30px;
+    display:flex;
+    flex-direction:right;
+    margin-bottom:10px;
+}
+
+.tab{
+    position:relative;
+    width:90%;
+    height:100%;
+    display:flex;
+    flex-direction:row;
+    justify-self: left;
+}
+
+.subtitle{
+    position:relative;
+    width:10%;
+    height:100%;
+    color:white;
+    display:flex;
+    flex-direction:row;
+    justify-self: center;
+    align-content: center;
+}
+
+
+
+.verTodos {
+   outline: none;
+    border:none;
+    background:none;
+    color:white;
+    padding-bottom:5px;
+    font-size: 20px;
+    padding:2px;
+   
+}

@@ -1,0 +1,74 @@
+/** Apartado Login*/
+
+.contentLogin{
+    width:100vw;
+    height:100vh;
+    background-color: rgb(36, 36, 36);
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+.panelLogin{
+    width:300px;
+    height:200px;
+    background-color: rgb(20, 20, 20);
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    padding:2%;
+    color:rgb(36, 36, 36);
+}
+
+.img{
+    margin-top:2%;
+}
+
+.img:hover{
+    width:55px;
+    height:55px;
+}
+
+.title{
+    font-size:30px;
+}
+
+/** Apartado tablero */
+.privateContent{
+    width: 100vw;
+    height:100vh;
+}
+
+.header{
+    width:100vw;
+    height:40px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    color:white;
+    padding-top:20px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.userContent{
+    margin-right:20px;
+}
+
+.username{
+    margin-right:50px;
+    font-size:30px;
+}
+
+.btnsalir{
+    outline:none;
+    border:none;
+    background:none;
+    color:gray;
+    font-size:30px;
+}
+
+.btnsalir:hover{
+    color:black;
+}

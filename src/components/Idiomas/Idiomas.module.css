@@ -1,0 +1,26 @@
+.content{
+    position:relative;
+    width:1200px;
+    height:auto;
+    display:flex;
+    flex-direction:row;
+    align-content: center;
+    justify-content: center;
+    background-color:#1A1818;
+}
+
+.seconContent{
+    position:relative;
+    width:90%;
+    height:100px;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    border-left:5px solid white;
+    border-right:5px solid #66625F;
+    border-bottom:5px solid #66625F;
+    padding-left: 10%;
+    padding-right:10%;
+    padding:10%;
+}
