@@ -1,19 +1,56 @@
 "use client"
-import React ,{useState} from 'react';
+import React ,{useState, useEffect} from 'react';
 import Style from './style.module.css';
 import OneTab from '../../components/google0Auth/onetab';
 import {useSession, signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
+import Url_config from '../../../Url_config';
 
 const adminPage = () => {
 
-  const { data: session } = useSession()
-   console.log(session);
+  const { data: session } = useSession();
+  const [userDB, setUserDB] = useState({
+     token:"",
+     role:0
+  });
 
-    if (session && session.user ) { //El usuario existe se muestra la pagina
+  const url = new Url_config({hostname:"localhost", port:3005});
+
+  useEffect(()=>{
+
+    
+    fetch(url.route_auth,{
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify(session) // body data type must match "Content-Type" header
+        })
+        .then(res=>{
+
+            res.json().then( res=> {
+              
+                setUserDB({
+                    token:res.token,
+                    role:res.role
+                });
+            });
+
+        })
+    .catch( err => {
+        console.log(err);
+    });
+
+  },[])
+    
+    if (session && session.user && userDB.token != "" ) { //El usuario existe se muestra la pagina
         return (
           
                 <div className={Style.privateContent}>
+
+                    {/**HEADER */}
                     <div className={Style.header}>
 
                         <span className={Style.title}>CodeBaou Private</span>
@@ -25,6 +62,7 @@ const adminPage = () => {
                             <button className={Style.btnsalir} onClick={() => signOut()}>Salir</button> 
                         </div>
                     </div>
+                  
                 </div>
         )
     }
@@ -43,7 +81,9 @@ const adminPage = () => {
                     width={30}
                     height={30}
                     alt="Picture of the author"
-                    onClick={() => signIn()}
+                    onClick={() => {
+                        signIn();
+                    }}
                     className={Style.img}
                 />  
             </div>
