@@ -62,13 +62,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-      <Head>
-        <title>Codebaou</title>
-        <meta name="description" content="Pagina web persoal" />
-      
-      </Head>
-      </Head>
+
       <Header title="Boris Alvarez" rw="Frontend" lw1="Desarrollador Web" lw2="Diseño" image="/BorisPerfil.webp"/>
 
       <main className={styles.main}>
@@ -98,7 +92,6 @@ export default function Home() {
                 <p className={styles.normal}> F<span className={styles.textblue}>P</span> Sistemas Microinformáticos y Redes</p>
               </LayoutList>
           </LayoutSection>
-
 
           <LayoutSection>
               <TitleLeftSection title=" -- "/>

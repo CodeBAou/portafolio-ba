@@ -1,0 +1,56 @@
+.content{
+    position:relative;
+    width:100;
+    height:auto;
+    padding-top:2vh;
+}
+
+.titlecontent{
+    width:auto;
+    height:80px;
+}
+
+.menu{
+    padding-top:5px;
+    padding-left:5px;
+}
+
+.btnMenu{
+    cursor:pointer;
+    color:rgb(37, 37, 37);
+    font-size:18px;
+    text-align:center;
+    padding-left:8px;
+    padding-right:8px;
+    outline:none;
+    border:1px solid gray;
+    width:100px;
+    height:30px;
+    border:none;
+}
+
+.btnMenu:hover{
+    color:rgb(0, 0, 0);
+    border:3px solid black;
+}
+
+.btnMenuBuscador{
+    position:relative;
+    width:600px;
+    text-align: left;
+    height:30px;
+    outline:none;
+    border:none;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.TableroTools{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    width:95%;
+    height:100vh;
+    margin-top:1vw;
+    
+}

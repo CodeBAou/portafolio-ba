@@ -1,0 +1,13 @@
+.content{
+    position:relative;
+    height:40px;
+    width:100%;
+    padding-left:10px;
+}
+
+.load{
+    color:white;
+}
+.data{
+    color:white;
+}

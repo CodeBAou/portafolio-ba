@@ -30,7 +30,7 @@ export default function Header(props:props){
                         width={500}
                         height={500}
                         alt="Picture of the author"
-                        />
+                    />
                 </div>
 
                 <div className={StyleHeader.contentRight}>
