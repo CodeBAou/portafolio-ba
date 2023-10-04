@@ -2,6 +2,7 @@ import React from 'react';
 import Style from './FeaturedProjects.module.css';
 import ItemProject from '../itemProject/itemProject';
 import ProyectosDestacadosTab from '../proyectosDestacadosTab/proyectosDestacadosTab';
+import Link from 'next/link';
 
 const FeaturedProjects = () => {
     return(
@@ -19,14 +20,17 @@ const FeaturedProjects = () => {
                         title='Web personal'
                         src='/imagenes/webpersonalb.png'
                     />
+                    
                     <ItemProject 
                         title='Script Archito'
                         src='/imagenes/archito.png'
                     />
+                   
                     <ItemProject 
                         title='Web Empresa Viso'
                         src='/imagenes/visopage.png'
                     />
+                   
                 </div>
             </div>
         </div>

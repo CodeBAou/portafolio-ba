@@ -22,7 +22,6 @@ const adminPage = () => {
 
   useEffect(()=>{
 
-    
     fetch(url.route_auth(),{
         method: 'POST',
         mode: 'cors',
@@ -35,8 +34,6 @@ const adminPage = () => {
         .then(res=>{
 
             res.json().then( res=> {
-                console.log("token res..............................");
-                console.log(res.token);
                 setUserDB({
                     token:res.token,
                     role:res.role
@@ -44,6 +41,7 @@ const adminPage = () => {
             });
 
         })
+
     .catch( err => {
         console.log(err);
         alert("No se ha podido conectar con el servidor")

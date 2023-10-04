@@ -10,5 +10,8 @@
 .main{
     width:100vw;
     height:95vh;
-   
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    padding-top:5px;
 }

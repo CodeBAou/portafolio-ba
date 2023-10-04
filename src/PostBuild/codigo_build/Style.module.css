@@ -1,0 +1,34 @@
+.content{
+    position:relative;
+    width:100%;
+    margin-top:30px;
+    background-color: rgb(12, 12, 12);
+} 
+
+.textarea{
+    position:relative;
+    width: 100%;
+    max-width: 100%;;
+    min-height: 50px; /* Altura mínima inicial */
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 15px;
+    background-color:white;
+    border-bottom:1px solid #70665E;
+    border-right:1px solid #70665E;
+    border-top:none;
+    border-left:none;
+    outline:none;
+    background-color: none;
+    color:rgb(36, 36, 36);
+    overflow: hidden;
+    padding-left:40px;
+    padding-right:40px;
+}
+
+.contentBTN{
+    padding:3px;
+    display:flex;
+    flex-direction:row;
+    justify-content: right;
+}

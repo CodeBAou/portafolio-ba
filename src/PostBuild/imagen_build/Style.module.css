@@ -1,0 +1,42 @@
+.content{
+    position:relative;
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.enlace{
+    position:relative;
+    width:98%;
+    height:30px;
+    background-color: rgb(12, 12, 12);
+    outline:none;
+    border:none;
+    border-bottom: 1px solid #70665E;
+    color:white;
+    font-size:30px;
+    text-align:center;
+    font-size:12px;
+}
+
+.contentBTN{
+    position:relative;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+}
+
+.del{
+    background-color: rgb(12, 12, 12);
+    text-align:center;
+}
+
+.img{
+    position:relative;
+    height:auto;
+    width:auto;
+    max-width:100%;
+}

@@ -1,3 +1,5 @@
+
+@media (min-width: 1200px) { 
 .h2{
     margin:0;
     color:white;
@@ -6,7 +8,6 @@
 .content{
     min-height:10vh;
     width:1200px;
-    min-width: 1200px;
     display:flex;
     flex-direction: column;
     background-color:#1A1818;
@@ -83,4 +84,84 @@
 
 .wcolor{
     color:#70665E;
+}
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px) { 
+
+    
+    .content{
+        width:90vw;
+        background-color:#1A1818;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .secondContent{
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+    }
+    
+    .title1{
+        position:relative;
+        width:100%;
+        text-align:center;
+        font-family:allura;
+        font-size:6em;
+        font-weight: 200;
+        color:#70665E;
+    }
+    
+    .authorIMG{
+        width:200px;
+        height:200px;
+        opacity: 0.8;
+        margin:0;
+    }
+
+    .contentLeft{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content: center;
+        position:relative;
+        
+        width:33.33%;
+    }
+    
+    .contentCenter{
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: center;
+       position:relative;
+       width:33.33%;
+       padding:0;
+       
+    }
+    
+    .contentRight{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        position:relative;
+        align-items: center;
+       
+        width:33.33%;
+    }
+
+    .sub{
+        font-size:1.5em;
+        color:white;
+    }
+    
+    .sub2{
+        font-size:3em;
+        font-family: allura;
+        color:#70665E;
+        font-weight: 200;
+    }
+    
 }

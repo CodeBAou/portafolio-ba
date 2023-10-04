@@ -174,7 +174,7 @@ export default function Home() {
           <FeatureProjects/>
 
           <LayoutSection>
-              <TitleSection title="Habilidades"/>
+              <TitleSection title="Tecnologias"/>
           </LayoutSection>
 
           

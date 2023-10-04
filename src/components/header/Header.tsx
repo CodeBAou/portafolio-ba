@@ -15,9 +15,11 @@ export default function Header(props:props){
     const words = props.lw1.split(" ");
     return(
         <header className={StyleHeader.content}>
+
            <h1 className={StyleHeader.title1}>{props.title}</h1>
 
            <div className={StyleHeader.secondContent}>
+            
                 <div className={StyleHeader.contentLeft}>
                     <h2 className={StyleHeader.sub}>{words[0]} <span className={StyleHeader.wcolor}>{words[1]}</span></h2>
                     <h2 className={StyleHeader.sub}>{props.lw2}</h2>

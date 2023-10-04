@@ -1,0 +1,40 @@
+.content{
+    position:relative;
+    width:100%;
+    background-color: rgb(12, 12, 12);
+    box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.2);
+    max-width:100%;
+}
+
+.content:hover{
+    opacity:0.8;
+}
+
+.contentBTN{
+    position:relative;
+    width:100%;
+    height:30px;
+    display:flex;
+    flex-direction:row;
+    justify-content: end;
+}
+
+
+.p_postBuild{
+    width: 100%;
+    min-height: 50px; /* Altura mínima inicial */
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 15px;
+    background-color:rgb(12, 12, 12);
+    border-bottom:1px solid #70665E;
+    border-right:1px solid #70665E;
+    border-top:none;
+    border-left:none;
+    outline:none;
+    background-color: none;
+    color:white;
+    overflow: hidden;
+    padding-left:40px;
+    padding-right:40px;
+}
