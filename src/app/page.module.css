@@ -1,4 +1,10 @@
-@media (min-width: 1500px) { 
+@font-face {
+  src: url(/Fuentes/Forum-Regular.ttf);
+  font-family: 'Forum', serif;
+}
+
+
+@media (min-width: 1200px) { 
   .main {
     display: flex;
     flex-direction: column;
@@ -125,11 +131,9 @@
     }
   }
 
-  @media (prefers-reduced-motion) {
-    .card:hover span {
-      transform: none;
-    }
-  }
+  
+
+
 
   /* Mobile */
   @media (max-width: 700px){
@@ -215,28 +219,18 @@
     }
   }
 
-  @media (prefers-color-scheme: dark) {
-    .vercelLogo {
-      filter: invert(1);
-    }
-
-    .logo {
-      filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-    }
-  }
-
-  @keyframes rotate {
-    from {
-      transform: rotate(360deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
 
   .normal{
     height:30px;
-    font-size:20px;
+    font-size:1.2rem;
+    margin-left:20px;
+    font-family: 'Forum', serif;
+  }
+
+  .normal2{
+    font-size:1.2rem;
+    margin-left:20px;
+    font-family: 'Forum', serif;
   }
   .textblue{
     color:#0964C3;
@@ -273,82 +267,31 @@
     flex-direction: row;
     justify-content: end;
     flex-grow: 2;
-  }
-
-}
-
-
-@media (max-width: 1500px) { 
-  .main{
-    width:100vw;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer{
-    position:relative;
-    width:100vw;
-    height:200px;
-    display:flex;
-    align-items: end;
-    justify-content:end;
-    background-color:#1A1818;
-    box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom:10px;
-    padding-right: 2%;
-    padding-bottom: 2%;
-    margin-top:100px;
-  }
-
-  .footeracces{
-    display:none;
-  }
-
-  .footerlegal{
-    display:flex;
-    flex-direction: row;
-    justify-content: end;
-    flex-grow: 2;
-  }
-
-  .normal{
-    font-size:2em
-  }
-  .normal2{
-    display:none;
-   }
-
-   .footerlegal{
-    display:flex;
-    flex-direction: row;
-    justify-self: right;
-    justify-content: right;
-    flex-grow: 2;
-    font-size:2em;
-    width: 100%;
-    margin-left:30px;
-  }
-}
-
-@media (max-width: 768px){
-  .footer{
-    width:100%;
-  }
-
-  .footeracces{
-      display:none;
-  }
-
-  .normal{
-    font-size: 1rem;
-  }
-  .normal2{
-   display:none;
-  }
-
-  .footerlegal{
     font-size:1.2rem;
-    margin-left: 30px;
   }
+
 }
+
+
+
+  @media (prefers-color-scheme: dark) {
+    .vercelLogo {
+      filter: invert(1);
+    }
+
+    .logo {
+      filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  
+
