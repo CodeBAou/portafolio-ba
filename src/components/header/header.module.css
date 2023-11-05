@@ -3,7 +3,7 @@
     box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media (min-width: 1200px) { 
+@media (min-width: 1500px) { 
 .h2{
     margin:0;
     color:white;
@@ -91,11 +91,11 @@
 
 }
 
-@media (min-width: 992px) and (max-width: 1200px) { 
+@media (min-width: 992px) and (max-width: 1449px) { 
 
     
     .content{
-        width:90vw;
+        width:100vw;
         background-color:#1A1818;
         display:flex;
         flex-direction: column;
@@ -112,7 +112,7 @@
         width:100%;
         text-align:center;
         font-family:allura;
-        font-size:6em;
+        font-size:10em;
         font-weight: 200;
         color:#70665E;
     }
@@ -169,9 +169,9 @@
     
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) and (max-width: 1500px) { 
     .content{
-        width:90vw;
+        width:100vw;
         background-color:#1A1818;
         display:flex;
         flex-direction: column;
@@ -188,7 +188,7 @@
         width:100%;
         text-align:center;
         font-family:allura;
-        font-size:3em;
+        font-size:8em;
         font-weight: 200;
         color:#70665E;
     }
@@ -232,12 +232,12 @@
     }
 
     .sub{
-        font-size:1.2em;
+        font-size:2em;
         color:white;
     }
     
     .sub2{
-        font-size:2.5em;
+        font-size:5em;
         font-family: allura;
         color:#70665E;
         font-weight: 200;

@@ -22,6 +22,8 @@ const adminPage = () => {
 
   useEffect(()=>{
 
+    
+
     fetch(url.route_auth(),{
         method: 'POST',
         mode: 'cors',
@@ -50,7 +52,9 @@ const adminPage = () => {
   },[session])
   
   const selectTool = () => {
+
         switch(funcionalidad){
+
             case 'Posts':
                 return <PostTools token={userDB.token} />
                 break;
@@ -58,13 +62,14 @@ const adminPage = () => {
                 return <UserTools/>
                 break;
             case 'Destacados':
-                return <DestacadosTools/>
+                return <DestacadosTools token={userDB.token}/>
                 break;
         }
   }
 
-    if (session && session.user && userDB.token != "" ) { //El usuario existe se muestra la pagina
-        return (
+    if (session && session.user && userDB.token != ""  ) { //El usuario existe se muestra la pagina
+        if(session.user.email === "borisafou@gmail.com"){
+            return (
           
                 <div className={Style.privateContent}>
                
@@ -82,11 +87,13 @@ const adminPage = () => {
                     </div>
 
                     <div className={Style.content}>
+
                         <nav className={Style.nav}>
                             <span className={Style.btnOption} onClick={()=>setfuncionalidad("Destacados")}>Destacados</span>
                             <span className={Style.btnOption} onClick={()=>setfuncionalidad("Posts")}>Posts</span>
                             <span className={Style.btnOption} onClick={()=>setfuncionalidad("Users")}>Users</span>
                         </nav>
+                        
                         <div className={Style.tablero}>
                                 {/** Carga el componente de la Herramienta seleccionada en el estado funcionalidad */}
                                 {selectTool()}  
@@ -95,29 +102,34 @@ const adminPage = () => {
                 </div>
         )
     }
+        
+    }
     
     return (
-        <div className={Style.contentLogin}>
+        <>
+            <div className={Style.contentLogin}>
 
-            {/** Debe Iniciar Sesion */}
+                {/** Debe Iniciar Sesion */}
 
-            <div className={Style.panelLogin}>
+                <div className={Style.panelLogin}>
 
-                <h1 className={Style.tlogin}>Iniciar Sesion </h1>
+                    <h1 className={Style.tlogin}>Iniciar Sesion </h1>
 
-                <Image
-                    src="/google.svg"
-                    width={30}
-                    height={30}
-                    alt="Picture of the author"
-                    onClick={() => {
-                        signIn();
-                    }}
-                    className={Style.img}
-                />  
+                    <Image
+                        src="/google.svg"
+                        width={30}
+                        height={30}
+                        alt="Picture of the author"
+                        onClick={() => {
+                            signIn();
+                        }}
+                        className={Style.img}
+                    />  
+                </div>
             </div>
-
-        </div>
+            <p className={Style.noMobile}></p>
+        </>
+        
     )
 }
 

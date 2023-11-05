@@ -18,8 +18,10 @@ interface postDataI{
     descripcion:string,
     data:string,
     miniatura:string,
-    enlace:string
-    tags:string
+    enlace:string,
+    tags:string,
+    destacado:boolean,
+    orderDestacado:false
 }
 
 interface sectionsDataI{
@@ -33,7 +35,7 @@ interface sectionsDataI{
 
 const NuevoTool = (props:NuevoToolPropsType) => {
 
-    const [ postDATA, setPostDATA ]        = useState<postDataI>({titulo:"",descripcion:"",data:"",miniatura:"",tags:"",enlace:""}); //datos del post {titulo, desc, data, url_miniatura, tags}
+    const [ postDATA, setPostDATA ]        = useState<postDataI>({titulo:"",descripcion:"",data:"",miniatura:"",tags:"",enlace:"",destacado:false,orderDestacado:0}); //datos del post {titulo, desc, data, url_miniatura, tags}
     const [ sectionDATA, setSectionDATA ]  = useState<sectionsDataI[]>([]); // //datos de cada secction , [{id,post,parrafo,img,order,type}, ...]
    
     //Actualiza los estados sectionDATA y sectionsObj

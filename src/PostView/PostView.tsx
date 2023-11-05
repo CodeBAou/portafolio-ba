@@ -5,7 +5,6 @@ import Url_config from '@/Url_config';
 
 interface propsPostView{
     id:string;
-    close:() => void;
 }
 
 interface dataPostI{
@@ -36,28 +35,32 @@ const PostView = (props:propsPostView) => {
 
     useEffect(() => {
 
-        fetch( url.route_GetPost(props.id), {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(resultPost => resultPost.json())
-        .then(resultPost=> {
-            setPostData(resultPost[0]);
-        });
-
-
-        fetch( url.route_GetSections(props.id), {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then( resultSections => resultSections.json())
-            .then( resultSections => {
-                setSectionsData(resultSections);
-        });
-
-    },[]);
+        if(props.id != undefined){
+            fetch( url.route_GetPost(props.id), {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(resultPost => resultPost.json())
+            .then(resultPost=> {
+                setPostData(resultPost[0]);
+            });
+    
+    
+            fetch( url.route_GetSections(props.id), {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                mode: 'cors'
+            }).then( resultSections => resultSections.json())
+                .then( resultSections => {
+                    setSectionsData(resultSections);
+            });
+    
+        }
+       
+    },[props]);
 
     const getSection = () => {
        if(sectionsData){
@@ -81,20 +84,12 @@ const PostView = (props:propsPostView) => {
     }
 
     return(
-        <div className= {Style.content}>
-
-            <div className={Style.head}>
-                <input className={Style.close} type="button" value="X" onClick={ () => props.close()}/>
-            </div>
-
-            <div className={Style.view}>
+        <div className={Style.view}>
                 <img className={Style.enlace} src={postData?.enlace} alt="Imagen encabezado del post"/>
                 <div className={Style.titleContent}>
                     <h2 className={Style.titulo}>{postData?.titulo}</h2>
                 </div>
-                {getSection()}
-            </div>
-            
+                {getSection()}  
         </div>
     )
 }

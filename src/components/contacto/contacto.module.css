@@ -1,3 +1,5 @@
+
+
 .content{
     display:flex;
     flex-direction:row;
@@ -27,13 +29,9 @@
     padding:1%;
 }
 
-.img{
-    width:150px;
-    height:150px;
-    transform: skewY(-20deg);
-    box-shadow: 5px 8px 8px rgba(220, 218, 218, 0.2);
-    border-radius:50%;
-}
+
+
+
 
 
 @keyframes Move {
@@ -44,8 +42,8 @@
 
 
 .linkedin{
-    width:150px;
-    height:150px;
+    width:100px;
+    height:100px;
     transform: skewY(-20deg);
     box-shadow: 5px 8px 8px rgba(220, 218, 218, 0.2);
     border-radius:50%;
@@ -106,6 +104,7 @@
         margin-right: 0px;
     }
 }
+
 .emailOpen{
     display:flex;
     flex-direction:row;
@@ -152,3 +151,68 @@
     height:50px;
     text-align:center;
 }
+
+.image{
+    width:10%;
+    height:auto;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+
+@media (max-width: 1500px){
+    .content{
+        position:relative;
+        width:100vw;
+    }
+
+    .image{
+        width:15%;
+    }
+
+    .emailInit {
+        width:40%;
+
+    }
+
+    .emailOpen{
+       width:40%;
+    }
+
+    .emailClose{
+        width:40%;
+    }
+    .input{
+        width:73%;
+    }
+}
+
+@media (max-width: 768px){
+    .content{
+        position:relative;
+        width:100%;
+    }
+    
+    .image{
+        width:20%;
+    }
+
+    .emailInit {
+        display:none;
+    }
+
+    .emailOpen{
+        display:none;
+    }
+
+    .emailClose{
+        display:none;
+    }
+
+    .input{
+        display:none;
+    }
+    .btn{
+        display:none;
+    }
+}   

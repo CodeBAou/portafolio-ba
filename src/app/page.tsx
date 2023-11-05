@@ -89,7 +89,7 @@ export default function Home() {
 
           <LayoutSection>
               <LayoutList>
-                <p className={styles.normal}> F<span className={styles.textblue}>P</span> Sistemas Microinformáticos y Redes</p>
+                <p className={styles.normal}> F<span className={styles.textblue}>P</span> Desarrollo de Aplicaciones web</p>
               </LayoutList>
           </LayoutSection>
 
@@ -151,7 +151,7 @@ export default function Home() {
                   alt="react icon"
                 />
 
-                <p className={styles.normal}> Desarrollo en javascript , angular, node y mongodb <span className={styles.textblue}>udemy</span></p>
+                <p className={styles.normal2}> Desarrollo en javascript , angular, node y mongodb <span className={styles.textblue}>udemy</span></p>
               </LayoutList>
           </LayoutSection>
 
@@ -177,7 +177,6 @@ export default function Home() {
               <TitleSection title="Tecnologias"/>
           </LayoutSection>
 
-          
           <Habilidades datos={habilidades} />
 
           <LayoutSection>
@@ -191,18 +190,43 @@ export default function Home() {
           </LayoutSection>
 
           <LayoutSection>
+              <LayoutList>
+              <Image
+                  src="/python.svg"
+                  width={50}
+                  height={50}
+                  alt="react icon"
+                />
+                <p className={styles.normal}> Estudiando Python </p>
+              </LayoutList>
+          </LayoutSection>
+
+          <LayoutSection>
               <TitleLeftSection title=""/>
           </LayoutSection>
       </main>
 
       <footer className={styles.footer}>
+        
             <div className={styles.footeracces}> 
-              <Link href="/adminPage">Administracion</Link>
+              <Link href="/adminPage"> 
+                <Image
+                  src="/admin-icon.svg"
+                  width={50}
+                  height={50}
+                  alt="admin icon"
+                />
+              </Link>
             </div>
+
             <div className={styles.footerlegal}>  
               <p>Esta web pertenece a Boris Álvarez, todos los derechos reservados.</p> 
             </div>
+            
       </footer>
+
+     
+
     </>
   )
 }

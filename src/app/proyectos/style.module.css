@@ -15,3 +15,13 @@
     flex-direction:row;
     padding-top:5px;
 }
+
+@media (max-width: 1200px) { 
+
+}
+
+@media (max-width: 768px){
+    .main{
+        justify-content:center;
+    }
+}

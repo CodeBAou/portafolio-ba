@@ -1,43 +1,13 @@
-.content{
-    position: fixed;
-    top:3%;
-    height:90%;
-    width:1200px;
-    border:5px solid black;
-    background-color: #272427;
-    display:flex;
-    flex-direction:column;
-    z-index:5;
-}
-
-.head{
-    position:relative;
-    width:100%;
-    height:5%;
-    display:flex;
-    flex-direction:row;
-    justify-content: end;
-    margin-bottom:30px;
-}
-
-.close{
-    color:rgb(71, 0, 0);
-    font-size: 18px;
-    width:50px;
-    background-color: black;
-    border:none;
-    outline:none;
-}
 
 .view{
     position:relative;
-    width:100%;
-    height:95%;
+    width:1200px;
+    height:auto;
     display:flex;
     flex-direction:column;
-    overflow: scroll;
     padding-left:2%;
     padding-right:2%;
+    background-color: #1A1818;
 }
 
 .enlace{
@@ -77,10 +47,10 @@
 
 .parrafoSection{
     padding:20px;
-    background-color: #111111;
+    
     color:white;
     margin-bottom:50px;
-    box-shadow: 10px 5px 5px rgb(71, 71, 71);
+   
 }
 
 .imagenSection{
@@ -97,4 +67,44 @@
     background-color: white;
     color:#272427;
   
+}
+
+/* styles.module.css */
+/* Estilo de la barra de desplazamiento */
+.scrollbar-container {
+    display:none;
+    
+  }
+  
+  .scrollbar-container::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */display:none;
+  }
+  
+  .scrollbar-container::-webkit-scrollbar-thumb {
+    display:none;
+  }
+  
+  .scrollbar-container::-webkit-scrollbar-track {
+    display:none;
+  }
+  
+@media (max-width:1200px){
+    .view{
+        width:100%;
+    }
+
+    .parrafoSection{
+        max-width: 100vw;
+        font-size:15px;
+    }
+
+    .codigoSection{
+        max-width:100vw;
+       
+        font-size:9px; 
+    }
+
+    .tituloSection{
+        padding:0;
+    }
 }

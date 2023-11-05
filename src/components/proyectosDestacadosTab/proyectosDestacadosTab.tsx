@@ -12,8 +12,8 @@ const ProyectosDestacadosTab = () => {
                 <Link href="/proyectos" className={style.verTodos} >
                     <Image
                         src="/eye.svg"
-                        width={40}
-                        height={40}
+                        width={60}
+                        height={60}
                         alt="Flecha atras"
                     />
                 </Link>

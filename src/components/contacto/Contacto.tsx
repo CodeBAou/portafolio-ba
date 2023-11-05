@@ -17,38 +17,54 @@ export default function Contacto(props:data){
         <section className={ContactoStyle.content}>
             
             <div className={ContactoStyle.contentSecond}>
-                <a href={props.github} target="_blank">
-                    <Image
-                        className={ContactoStyle.github}
-                        src="/github.svg"
-                        width={500}
-                        height={500}
-                        alt="Link repository of the author"
-                    />
-                </a>
+
+                <div className={ContactoStyle.image}>
+                    <a href={props.github} target="_blank">
+                        <Image
+                            className={ContactoStyle.github}
+                            src="/github.svg"
+                            width={500}
+                            height={500}
+                            alt="Link repository of the author"
+                            layout="responsive"
+                        />
+                    </a>
+                </div>
+
+                <div className={ContactoStyle.image}>
+                    <a href={props.linkedin} target="_blank">
+                        <Image
+                            className={ContactoStyle.linkedin}
+                            src="/linkedin.svg"
+                            width={500}
+                            height={500}
+                            alt="Link socialnetwork of the author"
+                            layout="responsive"
+                        />
+                    </a>
+                </div>
+
+
+                <div className={ContactoStyle.image}>
+                        <Image
+                            className={ContactoStyle.email}
+                            src="/email.svg"
+                            width={500}
+                            height={500}
+                            alt="Link socialnetwork of the author"
+                            layout="responsive"
+                            onClick= {() => {
+                                setcopyemailclass(ContactoStyle.emailOpen);
+                                console.log("click");
+                            }}
+                        />
+                    
+                </div>
+
                 
-                <a href={props.linkedin} target="_blank">
-                    <Image
-                        className={ContactoStyle.linkedin}
-                        src="/linkedin.svg"
-                        width={500}
-                        height={500}
-                        alt="Link socialnetwork of the author"
-                    />
-                </a>
                 
-                <Image
-                    className={ContactoStyle.email}
-                    src="/email.svg"
-                    width={500}
-                    height={500}
-                    alt="email of the author"
-                    onClick= {() => {
-                        setcopyemailclass(ContactoStyle.emailOpen);
-                        console.log("click");
-                    }}
-                />
-                
+
+               
             </div>
             
             <div className={copyemailclass}>

@@ -1,9 +1,9 @@
 .content{
     position:relative;
-    height:80px;
+    height:100%;
     width:100%;
     border-right:5px solid #70665E;
-    margin-top:-20px;
+    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,4 +21,16 @@
 .title{
     color:#70665E;
     font-size:30px;
+}
+
+@media (max-width: 1500px){
+    .title{
+        font-size:2em;
+    }
+}
+
+@media (max-width: 768px){
+    .title{
+        padding-left:10px;
+    }
 }
