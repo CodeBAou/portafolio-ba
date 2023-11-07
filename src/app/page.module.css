@@ -4,15 +4,16 @@
 }
 
 
-@media (min-width: 1200px) { 
   .main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 6rem;
+  
     min-height: 100vh;
-
+    max-width:100vw;
+    width:100vw;
+    overflow: hidden;
   }
 
   .main > *{
@@ -119,6 +120,7 @@
   .logo {
     position: relative;
   }
+
   /* Enable hover only on non-touch devices */
   @media (hover: hover) and (pointer: fine) {
     .card:hover {
@@ -270,7 +272,7 @@
     font-size:1.2rem;
   }
 
-}
+
 
 
 
@@ -294,4 +296,14 @@
   }
 
   
-
+@media (max-width:1200px){
+  .footerlegal{
+    display:flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-grow: 2;
+    font-size:1rem;
+    margin-left:5%;
+    margin-top:-20%;
+  }
+}

@@ -66,9 +66,10 @@ export default function Home() {
       <Header title="Boris Alvarez" rw="Frontend" lw1="Desarrollador Web" lw2="Diseño" image="/BorisPerfil.webp"/>
 
       <main className={styles.main}>
-      
-          <Contacto github="https://github.com/CodeBAou" linkedin="https://www.linkedin.com/in/borisou" email="borisafou@gmail.com"/>
-          
+
+          <LayoutSection>  
+            <Contacto github="https://github.com/CodeBAou" linkedin="https://www.linkedin.com/in/borisou" email="borisafou@gmail.com"/>
+          </LayoutSection>
           <LayoutSection>
               <TitleSection title="Formación"/>
           </LayoutSection>

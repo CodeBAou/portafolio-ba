@@ -17,7 +17,7 @@ const ItemProject = (props:ItemProjectI) =>  {
                  <Link href={`/post/${props.id}`} className={style.imgcontenta}>
                     <img className={style.img} src={props.src} width="251" height="350"  alt="miniatura del proyecto" />
                 </Link>
-                <h1 className={style.title}>{props.title}</h1>
+                
             </>
         }
     }
@@ -25,6 +25,7 @@ const ItemProject = (props:ItemProjectI) =>  {
     return(
         <div className={style.imgcontent}>
             {getImage()}
+            <h1 className={style.title}>{props.title}</h1>
         </div>
         
     )

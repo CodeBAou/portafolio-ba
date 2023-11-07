@@ -2,6 +2,8 @@
 import React,{useState,useEffect}from 'react';
 import Style from './PostView.module.css';
 import Url_config from '@/Url_config';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface propsPostView{
     id:string;
@@ -84,13 +86,25 @@ const PostView = (props:propsPostView) => {
     }
 
     return(
-        <div className={Style.view}>
-                <img className={Style.enlace} src={postData?.enlace} alt="Imagen encabezado del post"/>
-                <div className={Style.titleContent}>
-                    <h2 className={Style.titulo}>{postData?.titulo}</h2>
-                </div>
-                {getSection()}  
-        </div>
+        <>
+            <Link href="/proyectos">
+                <Image 
+                    src="/arrowBack.svg"
+                    width={50}
+                    height={50}
+                    alt="Icon back"
+                    className={Style.iconBack}
+                />
+            </Link>
+
+            <div className={Style.view}>
+                    <img className={Style.enlace} src={postData?.enlace} alt="Imagen encabezado del post"/>
+                    <div className={Style.titleContent}>
+                        <h2 className={Style.titulo}>{postData?.titulo}</h2>
+                    </div>
+                    {getSection()}  
+            </div>
+        </>
     )
 }
 

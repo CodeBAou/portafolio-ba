@@ -28,16 +28,38 @@
     opacity:0.7;
  }
 
+ 
+
  .title{
    color:white;
    font-size:3rem;
    position:absolute;
-   top:70%;
-   left:20%;
+   top:90%;
+   left:10%;
    box-shadow: 10px 5px 5px rgb(56, 56, 56);
    text-shadow: 10px 5px 5px black;
+   
  }
 
  
    
+ }
+
+
+ @media (max-width:2000px){
+
+ .title{
+   color:white;
+   font-size:2rem;
+   margin-top:-3rem;
+   margin-left:1rem;
+   box-shadow: 10px 5px 5px rgb(56, 56, 56);
+   text-shadow: 10px 5px 5px black;
+   margin-bottom:2rem;
+ }
+ }
+
+
+ @media (max-width:768px){
+  
  }

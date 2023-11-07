@@ -9,7 +9,7 @@ class Url_config {
       this.port     = 3005;//Server port
       this.api      = '/codebaouapi';
       this.limite_Tabulacion_postlist = 15; //Numero max de post que se listan 
-      this.ipServer = '192.168.7.3';
+      this.ipServer = 'localhost';
       this.base = `http://${this.ipServer}:${this.port}${this.api}`; //URL BASE URL HOST + PORT
     
   }

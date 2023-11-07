@@ -78,8 +78,10 @@ const FeaturedProjects = ( props: data ) => {
                 setIntentos(intentosAux);
            }else{
                 alert("No se ha podido cargar los datos");
-                setLoading(false);           }
+                setLoading(false);           
+            }
            
+            setIntentos(intentosAux);
         });
     }
 

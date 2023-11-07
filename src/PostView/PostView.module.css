@@ -87,7 +87,14 @@
   .scrollbar-container::-webkit-scrollbar-track {
     display:none;
   }
-  
+
+.iconBack{
+    position: absolute;
+    top:50px;
+    left:20px;
+    filter: invert(98%) sepia(60%) saturate(0%) hue-rotate(140deg) brightness(110%) contrast(100%);
+}
+
 @media (max-width:1200px){
     .view{
         width:100%;
