@@ -1,4 +1,4 @@
-import React,{useState,useEffect, DragEvent} from 'react';
+import React,{useState, DragEvent} from 'react';
 import Style from './Style.module.css';
 import ItemProject from '@/components/itemProject/itemProject';
 import FeatureProjects from '@/components/Featuredprojects/FeaturedProjects';

@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 interface propsPostView{
     id:string;
+    close:()=>void;
 }
 
 interface dataPostI{
