@@ -45,7 +45,7 @@ export default function Contacto(props:data){
                 />
                 
                 <div className={copyemailclass}>
-                    <input type="text" className={ContactoStyle.copyInput}/>
+                    <input type="text" className={ContactoStyle.copyInput} value="borisafou@gmail.com"/>
                     <input type="button" className={ContactoStyle.copyBtn} value="X" onClick={ () => {
                           if(emailOpen){
                             setcopyemailclass(ContactoStyle.copyEmailContent);
