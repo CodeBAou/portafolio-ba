@@ -50,7 +50,7 @@ const FeaturedProjects = ( props: data ) => {
         .then( response => response.json() )
         .then(res => {
            
-                res.forEach( element => {
+                res.forEach( (element:dataI) => {
                     if( element.orderDestacado == 1 ){
                         setD1(element);
                     }

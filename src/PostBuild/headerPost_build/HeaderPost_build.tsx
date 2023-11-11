@@ -2,9 +2,13 @@ import React,{useState, useEffect} from 'react';
 import Style from './Style.module.css';
 
 interface dataPostIprops{
-    posts:postDataI;
-    sections:sectionsDataI;
-    GetData:(s:postDataI) => void;
+    titulo:string,
+    descripcion:string,
+    GetData:React.Dispatch<React.SetStateAction<postDataI>>,
+    tags:string,
+    enlace:string,
+    data:string,
+    miniatura:string
 }
 
 interface postDataI{
@@ -12,8 +16,11 @@ interface postDataI{
     descripcion:string,
     data:string,
     miniatura:string,
-    enlace:string
-    tags:string
+    url_miniatura:string, 
+    enlace:string,
+    tags:string,
+    destacado:boolean,
+    orderDestacado:number
 }
 
 interface sectionsDataI{
@@ -23,6 +30,7 @@ interface sectionsDataI{
     img:string,
     order:number,
     type:number
+    titulo:string
 }
 
 
@@ -34,7 +42,10 @@ const HeaderPost_build = (props:dataPostIprops) => {
         data:"",
         miniatura:"./MiniaturaMuestra.png",
         enlace:"https://i.pinimg.com/736x/ad/6c/53/ad6c53396f280b56444e6095f39cf447.jpg",
-        tags:""
+        tags:"",
+        url_miniatura:"",
+        destacado:false,
+        orderDestacado:0
     });
 
     useEffect(() => {

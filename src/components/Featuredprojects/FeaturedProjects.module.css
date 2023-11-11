@@ -39,10 +39,8 @@
    border-right: none;
    display:flex;
    flex-direction:row;
-   justify-self: center;
+   align-items: center;
    justify-content: center;
-   align-content: center;
-   align-self: center;
    overflow:hidden;
 }
 

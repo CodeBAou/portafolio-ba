@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 interface propsPostView{
     id:string;
-    close:()=>void;
+    
 }
 
 interface dataPostI{
@@ -88,7 +88,7 @@ const PostView = (props:propsPostView) => {
 
     return(
         <>
-            <Link href="/proyectos">
+            <Link href="/">
                 <Image 
                     src="/arrowBack.svg"
                     width={50}

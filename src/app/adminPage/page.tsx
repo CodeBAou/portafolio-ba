@@ -9,7 +9,7 @@ import UserTools from '../tools/UserTools/UserTools';
 import PostTools from '../tools/PostTools/PostTools';
 import DestacadosTools from '../tools/DestacadosTools/DestacadosTools';
 
-const adminPage = () => {
+const AdminPage = () => {
 
   const [funcionalidad,setfuncionalidad] = useState("Posts");//Indica la herramienta a cargar
   const { data: session } = useSession();
@@ -133,4 +133,4 @@ const adminPage = () => {
     )
 }
 
-export default adminPage;
+export default AdminPage;

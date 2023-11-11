@@ -10,7 +10,7 @@ interface data{
 }
 export default function Contacto(props:data){
 
-    const [copyemailclass, setcopyemailclass] = useState( ContactoStyle.emailInit );
+    const [copyemailclass, setcopyemailclass] = useState( ContactoStyle.copyInit );
     let emailOpen : boolean = false;
 
     return(
@@ -18,63 +18,60 @@ export default function Contacto(props:data){
             
             <div className={ContactoStyle.contentSecond}>
 
-                <div className={ContactoStyle.image}>
-                    <a href={props.github} target="_blank">
-                        <Image
-                            className={ContactoStyle.github}
-                            src="/github.svg"
-                            width={500}
-                            height={500}
-                            alt="Link repository of the author"
-                            layout="responsive"
-                        />
-                    </a>
-                </div>
-
-                <div className={ContactoStyle.image}>
-                    <a href={props.linkedin} target="_blank">
-                        <Image
-                            className={ContactoStyle.linkedin}
-                            src="/linkedin.svg"
-                            width={500}
-                            height={500}
-                            alt="Link socialnetwork of the author"
-                            layout="responsive"
-                        />
-                    </a>
-                </div>
-
-
-                <div className={ContactoStyle.image}>
-                        <Image
-                            className={ContactoStyle.email}
-                            src="/email.svg"
-                            width={500}
-                            height={500}
-                            alt="Link socialnetwork of the author"
-                            layout="responsive"
-                            onClick= {() => {
-                                setcopyemailclass(ContactoStyle.emailOpen);
-                                console.log("click");
-                            }}
-                        />
-                    
-                </div>
-
+              
+                <Image
+                    fill
+                    className={ContactoStyle.github}
+                    src="/github.svg"
+                    alt="Link repository of the author"
+                    sizes="(min-width: 1200px) 50px, (max-width: 1200px) 100px, 100px "
+                />
                 
+                <Image
+                    fill
+                    className={ContactoStyle.email}
+                    src="/email.svg"
+                    alt="Link socialnetwork of the author"
+                    sizes="(min-width: 1200px) 50px, (max-width: 1200px) 100px , 100px"
+                    onClick= {() => {
+                        if(emailOpen){
+                            setcopyemailclass(ContactoStyle.copyEmailContent);
+                            emailOpen = false;
+                        }else{
+                            setcopyemailclass(ContactoStyle.copyInit);
+                            emailOpen = true;
+                        }
+                    }}
+                />
                 
+                <div className={copyemailclass}>
+                    <input type="text" className={ContactoStyle.copyInput}/>
+                    <input type="button" className={ContactoStyle.copyBtn} value="X" onClick={ () => {
+                          if(emailOpen){
+                            setcopyemailclass(ContactoStyle.copyEmailContent);
+                            emailOpen = false;
+                        }else{
+                            setcopyemailclass(ContactoStyle.copyInit);
+                            emailOpen = true;
+                        }
+                    }}/>
+                </div>
 
+                <Image
+                    fill
+                    className={ContactoStyle.linkedin}
+                    src="/linkedin.svg"
+                    alt="Link socialnetwork of the author"
+                    sizes="(min-width: 1200px) 50px, (max-width: 1200px) 100px , 100px"
+                    onClick = { () => {
+                      
+                        
+                    }}
+                />
                
             </div>
             
-            <div className={copyemailclass}>
-                    <input type="text" className={ContactoStyle.input} defaultValue={props.email}/>
-                    <button className={ContactoStyle.btn} onClick={ () => {
-                        setcopyemailclass(ContactoStyle.emailClose);
-                        console.log("click");
-                    }}>X</button>
-            </div>
-
+         
     </section>
     )
 }

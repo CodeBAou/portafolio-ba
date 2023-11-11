@@ -295,15 +295,21 @@
     }
   }
 
-  
+  .legal{ 
+    font-size:1rem;
+  }
 @media (max-width:1200px){
   .footerlegal{
     display:flex;
     flex-direction: row;
-    justify-content: start;
-    flex-grow: 2;
+    width:100vw;
     font-size:1rem;
-    margin-left:5%;
-    margin-top:-20%;
+    
+  }
+
+  .legal{ 
+    font-size:1rem;
+    position:relative;
+    width:100%;
   }
 }

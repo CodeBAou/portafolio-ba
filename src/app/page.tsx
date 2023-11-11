@@ -1,4 +1,5 @@
 "use client"
+import React, {useState} from 'react';
 import Image from 'next/image'
 import styles from './page.module.css';
 import Header from '../components/header/Header';
@@ -15,7 +16,7 @@ import Head from 'next/head';
 
 export default function Home() {
 
-  const {defaultDataFPROJECTS, setDefaultDataFPROJECTS} = useState({
+  const [defaultDataFPROJECTS, setDefaultDataFPROJECTS] = useState({
     data:"",
     descripcion:"",
     enlace:"",
@@ -235,7 +236,7 @@ export default function Home() {
         </div>
 
         <div className={styles.footerlegal}>
-          <p>Esta web pertenece a Boris Álvarez, todos los derechos reservados.</p>
+          <p className={styles.legal}>Esta web pertenece a Boris Álvarez, todos los derechos reservados.</p>
         </div>
 
       </footer>

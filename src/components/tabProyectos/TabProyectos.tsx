@@ -12,8 +12,6 @@ const TabProyectos = (props:TabProyectosPropsI) => {
     const url = new Url_config();
     const [total,setTotal] = useState(0);
     const [paneles,setPaneles] = useState(0);
-    const [itemcmp,setItemsCmp] = useState<Element[]>([]);
-    const [active, panel ] = useState(1);
 
     useEffect(()=>{
 
@@ -33,7 +31,7 @@ const TabProyectos = (props:TabProyectosPropsI) => {
         let npaneles = total/9;
         setPaneles(npaneles);
 
-    });
+    }, []);
 
     const getItems = () => {
         let btn = [];

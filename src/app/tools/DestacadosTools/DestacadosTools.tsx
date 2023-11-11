@@ -1,4 +1,4 @@
-import React,{useState, DragEvent} from 'react';
+import React,{useState, DragEvent, useEffect} from 'react';
 import Style from './Style.module.css';
 import ItemProject from '@/components/itemProject/itemProject';
 import FeatureProjects from '@/components/Featuredprojects/FeaturedProjects';
@@ -175,7 +175,7 @@ const DestacadosTools = (props:propsI) => {
         .then( response => response.json() )
         .then(res => {
            
-                res.forEach( element => {
+                res.forEach( (element:dataI) => {
                     if( element.orderDestacado == 1 ){
                         setDestacado1(element);
                     }

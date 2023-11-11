@@ -17,7 +17,7 @@ interface responsedata{
   tags:string;
   titulo:string;
 }
-const proyectos = () => {
+const Proyectos = () => {
 
     const url = new Url_config();
     const [page, setPage] = useState(1);
@@ -40,7 +40,7 @@ const proyectos = () => {
             return res.json();
         }).then(res => {
            
-              let dateT = res.data.map( item => {
+              let dateT = res.data.map( (item:responsedata) => {
               let dataMod = new Date(item.data);
               item.data = `${dataMod.getDate()} - ${dataMod.getMonth()} - ${dataMod.getFullYear()}`;
               return item;
@@ -55,14 +55,15 @@ const proyectos = () => {
     },[page]);
 
     const getItems = () =>  {
+
       return items.map( item => {
-        return <ProyectoItem id={item._id} titulo={item.titulo} desc={item.descripcion} miniatura={item.miniatura} date={item.data}  open={OpenPost}/>
+        return <ProyectoItem key={item._id} id={item._id} titulo={item.titulo} desc={item.descripcion} miniatura={item.miniatura} date={item.data}  open={OpenPost}/>
       });
     }
 
 
     const OpenPost = (id:string) => {
-        setPostView(<PostView id={id} close={ClosePost}/>)
+        setPostView(<PostView id={id} />)
     }
 
     const ClosePost = () => {
@@ -97,4 +98,4 @@ const proyectos = () => {
     )
 }
 
-export default proyectos;
+export default Proyectos;
