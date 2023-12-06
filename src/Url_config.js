@@ -5,13 +5,13 @@ class Url_config {
     
   //HOST
   constructor() {
-      this.host     = 'localhost'; //Server hostname  
+      this.host     = 'localhost'; //Server hostname  localhost
       this.port     = 3005;//Server port
       this.api      = '/codebaouapi';
       this.limite_Tabulacion_postlist = 15; //Numero max de post que se listan 
       this.ipServer = 'localhost';
-      this.base = `http://${this.ipServer}:${this.port}${this.api}`; //URL BASE URL HOST + PORT
-    
+     // this.base = `http://${this.ipServer}:${this.port}${this.api}`; //URL BASE URL HOST + PORT
+      this.base = `https://codebaou-page-backend.vercel.app${this.api}`
   }
   
   //ROUTES
