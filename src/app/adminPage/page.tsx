@@ -8,22 +8,22 @@ import Url_config from '../../Url_config';
 import UserTools from '../tools/UserTools/UserTools';
 import PostTools from '../tools/PostTools/PostTools';
 import DestacadosTools from '../tools/DestacadosTools/DestacadosTools';
+import Link from 'next/link'
+
 
 const AdminPage = () => {
 
-  const [funcionalidad,setfuncionalidad] = useState("Posts");//Indica la herramienta a cargar
-  const { data: session } = useSession();
-  const [userDB, setUserDB] = useState({
-     token:"",
-     role:0
-  });
+    const [funcionalidad,setfuncionalidad] = useState("Posts");//Indica la herramienta a cargar
+    const { data: session, status } = useSession();
+    const [userDB, setUserDB] = useState({
+       token: "",
+       role:0
+    });
 
-  const url = new Url_config();
+const url = new Url_config();
 
-  useEffect(()=>{
-
-    
-
+useEffect(()=>{
+    //Se realiza peticion al servidor para con el token para el middleware
     fetch(url.route_auth(),{
         method: 'POST',
         mode: 'cors',
@@ -34,24 +34,35 @@ const AdminPage = () => {
         body: JSON.stringify(session) // body data type must match "Content-Type" header
         })
         .then(res=>{
-
+           
             res.json().then( res=> {
-                setUserDB({
-                    token:res.token,
-                    role:res.role
-                });
-            });
 
+                if(res.token != null){
+                    
+                    setUserDB({
+                        token:res.token,
+                        role:res.role
+                    });
+                }
+               
+            });
+           
         })
 
+      
     .catch( err => {
-        console.log(err);
-        alert("No se ha podido conectar con el servidor")
+       
+        alert("No se ha podido conectar con el servidor");
+
+        setUserDB({
+            token:"",
+            role:0
+         });
     });
 
-  },[session])
+},[session])
   
-  const selectTool = () => {
+const selectTool = () => {
 
         switch(funcionalidad){
 
@@ -65,72 +76,90 @@ const AdminPage = () => {
                 return <DestacadosTools token={userDB.token}/>
                 break;
         }
-  }
+}
 
-    if (session && session.user && userDB.token != ""  ) { //El usuario existe se muestra la pagina
-        if(session.user.email === "borisafou@gmail.com"){
-            return (
-          
-                <div className={Style.privateContent}>
-               
-                    {/**HEADER */}
-                    <div className={Style.header}>
+const validate: () => boolean = () => {
 
-                        <span className={Style.title}>CodeBaou Private</span>
+  
+    if ( userDB.token !== "" && status  === "authenticated" && session ){
+        return true;
+    }
 
-                        <div className={Style.tools}></div>
+    return false;
+}
 
-                        <div className={Style.userContent}>
-                            <span className={Style.username}> Hola {session.user.name} </span>
-                            <button className={Style.btnsalir} onClick={() => signOut()}>Salir</button> 
-                        </div>
-                    </div>
+if( validate() && session && session.user){
+   
+         //Existe un token por lo que el servidor valido el usuario
 
-                    <div className={Style.content}>
+        return (
+           
+            <div className={Style.privateContent}>
+        
+                {/**HEADER */}
+                <div className={Style.header}>
 
-                        <nav className={Style.nav}>
-                            <span className={Style.btnOption} onClick={()=>setfuncionalidad("Destacados")}>Destacados</span>
-                            <span className={Style.btnOption} onClick={()=>setfuncionalidad("Posts")}>Posts</span>
-                            <span className={Style.btnOption} onClick={()=>setfuncionalidad("Users")}>Users</span>
-                        </nav>
-                        
-                        <div className={Style.tablero}>
-                                {/** Carga el componente de la Herramienta seleccionada en el estado funcionalidad */}
-                                {selectTool()}  
-                        </div>
+                    <span className={Style.title}>CodeBaou Private</span>
+
+                    <div className={Style.tools}></div>
+
+                    <div className={Style.userContent}>
+                        <span className={Style.username}> Hola {session.user.name } </span>
+                        <button className={Style.btnsalir} onClick={() => signOut()}>Salir</button> 
                     </div>
                 </div>
+
+                <div className={Style.content}>
+
+                    <nav className={Style.nav}>
+                        <span className={Style.btnOption} onClick={()=>setfuncionalidad("Destacados")}>Destacados</span>
+                        <span className={Style.btnOption} onClick={()=>setfuncionalidad("Posts")}>Posts</span>
+                        <span className={Style.btnOption} onClick={()=>setfuncionalidad("Users")}>Users</span>
+                    </nav>
+                    
+                    <div className={Style.tablero}>
+                            {/** Carga el componente de la Herramienta seleccionada en el estado funcionalidad */}
+                            {selectTool()}  
+                    </div>
+                </div>
+            </div>
         )
-    }
-        
-    }
     
+  
+}
+
+else{
+    //No existe inicio de session o el servidor no ha validado al usuario
     return (
         <>
             <div className={Style.contentLogin}>
-
-                {/** Debe Iniciar Sesion */}
-
-                <div className={Style.panelLogin}>
-
-                    <h1 className={Style.tlogin}>Iniciar Sesion </h1>
-
+            <Link className={Style.volverInicio} href="/" scroll={false}>
+                &lt;&lt; volver al inicio
+            </Link>
+               {/** Debe Iniciar Sesion */}
+   
+               <div className={Style.panelLogin}>
+   
+                   <h1 className={Style.tlogin}>Iniciar Sesion </h1>
+   
                     <Image
-                        src="/google.svg"
-                        width={30}
-                        height={30}
-                        alt="Picture of the author"
-                        onClick={() => {
-                            signIn();
-                        }}
-                        className={Style.img}
-                    />  
-                </div>
-            </div>
-            <p className={Style.noMobile}></p>
-        </>
-        
-    )
+                       src="/google.svg"
+                       width={30}
+                       height={30}
+                       alt="Picture of the author"
+                       onClick={() => {
+                           signIn();
+                       }}
+                       className={Style.img}
+                   />  
+               </div>
+           </div>
+           <p className={Style.noMobile}></p>
+       </>
+           
+       )
+   }
+
 }
 
 export default AdminPage;

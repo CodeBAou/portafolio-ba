@@ -123,6 +123,9 @@
     display:none;
 }
 
+.volverInicio{
+    margin-bottom:20px;
+}
 @media (max-width: 1200px) { 
     .privateContent{
         display:none;

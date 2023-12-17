@@ -15,7 +15,7 @@ const ItemProject = (props:ItemProjectI) =>  {
         if(props.id != undefined){
             return <>
                  <Link href={`/post/${props.id}`} className={style.imgcontenta}>
-                    <img className={style.img} src={props.src} width="251" height="350"  alt="miniatura del proyecto" />
+                    <img className={style.img} src={props.src} width="318.36" height="442.78"  alt="miniatura del proyecto" />
                 </Link>
                 
             </>
