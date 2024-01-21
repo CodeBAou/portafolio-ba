@@ -44,6 +44,34 @@
    filter: invert(12%) sepia(26%) saturate(335%) hue-rotate(173deg) brightness(89%) contrast(93%);
 }
 
+@keyframes animationCloseEmail {
+
+    from { 
+        width:300px;
+    }
+
+    to {
+        width:0px;
+    }
+
+}
+
+@keyframes animationOpenEmail {
+    from { 
+        width:0px;
+    }
+
+    to {
+        width:300px;
+    }
+}
+
+.emailContent{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+}
+
 .email{
   width:100px!important;
   display:flex;
@@ -51,6 +79,46 @@
   filter: invert(13%) sepia(49%) saturate(4930%) hue-rotate(5deg) brightness(94%) contrast(103%);
 }
 
+.emailCloseStart{
+    display:flex;
+    margin:0px;
+    width:0px;
+    overflow:hidden;
+    margin-left:5px;
+   
+}
+
+.emailClose{
+    display:flex;
+    margin:0px;
+    overflow:hidden;
+    margin-left:5px;
+    animation-name: animationCloseEmail;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; 
+}
+
+.emailOpen{
+    display:flex;
+    position:relative;
+    overflow:hidden;
+    margin-left:5px;
+    animation-name: animationOpenEmail;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; 
+}
+
+.linkedin:hover{
+   border: 5px solid black;
+}
+
+.email:hover{
+    border: 5px solid black;
+}
+
+.github:hover{
+    border: 5px solid black;
+}   
 
 /** Input Style Copy Email*/
 
@@ -70,6 +138,7 @@
     height:30px;
     outline:none;
     border:none;
+    text-align: center;
 }
 
 .copyBtn{

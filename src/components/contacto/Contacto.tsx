@@ -8,17 +8,25 @@ interface data{
     linkedin:string,
     email:string
 }
+
 export default function Contacto(props:data){
 
     const [copyemailclass, setcopyemailclass] = useState( ContactoStyle.copyInit );
-    let emailOpen : boolean = false;
+   
+    /**Seleccion el estilo con tres clases predefinidas:
+    *     emailCloseStart : Estilo al cargar la pagina 
+    *     emailClose      : Activa la animacion para ocultar el correo
+    *     emailOpen       : Activa la animacion para mostrar el correo
+    */
+   
+    const [classAnimationEmail, setClassAnimationEmail] = useState(ContactoStyle.emailCloseStart);
 
     return(
         <section className={ContactoStyle.content}>
             
             <div className={ContactoStyle.contentSecond}>
 
-              
+            <a href={props.github} target="_blank">
                 <Image
                     fill
                     className={ContactoStyle.github}
@@ -26,52 +34,46 @@ export default function Contacto(props:data){
                     alt="Link repository of the author"
                     sizes="(min-width: 1200px) 50px, (max-width: 1200px) 100px, 100px "
                 />
-                
-                <Image
-                    fill
-                    className={ContactoStyle.email}
-                    src="/email.svg"
-                    alt="Link socialnetwork of the author"
-                    sizes="(min-width: 1200px) 50px, (max-width: 1200px) 100px , 100px"
-                    onClick= {() => {
-                        if(emailOpen){
-                            setcopyemailclass(ContactoStyle.copyEmailContent);
-                            emailOpen = false;
-                        }else{
-                            setcopyemailclass(ContactoStyle.copyInit);
-                            emailOpen = true;
-                        }
-                    }}
-                />
-                
-                <div className={copyemailclass}>
-                    <input type="text" className={ContactoStyle.copyInput} value="borisafou@gmail.com"/>
-                    <input type="button" className={ContactoStyle.copyBtn} value="X" onClick={ () => {
-                          if(emailOpen){
-                            setcopyemailclass(ContactoStyle.copyEmailContent);
-                            emailOpen = false;
-                        }else{
-                            setcopyemailclass(ContactoStyle.copyInit);
-                            emailOpen = true;
-                        }
-                    }}/>
-                </div>
+            </a>
+                <div className={ContactoStyle.emailContent}>
 
-                <Image
-                    fill
-                    className={ContactoStyle.linkedin}
-                    src="/linkedin.svg"
-                    alt="Link socialnetwork of the author"
-                    sizes="(min-width: 1200px) 50px, (max-width: 1200px) 100px , 100px"
-                    onClick = { () => {
-                      
+                    <Image
+                        fill
+                        className={ContactoStyle.email}
+                        src="/email.svg"
+                        alt="Link socialnetwork of the author"
+                        sizes="(min-width: 1200px) 50px, (max-width: 1200px) 100px , 100px"
+                        onClick= {() => {
+                            setClassAnimationEmail(ContactoStyle.emailOpen);
+                        }}
+                    />
+                    
+
+                    <div className={classAnimationEmail}>
+                        <input type="text" className={ContactoStyle.copyInput} value="borisafou@gmail.com"/>
+                        <input type="button" className={ContactoStyle.copyBtn} value="X" onClick={ () => {
+                            setClassAnimationEmail(ContactoStyle.emailClose);
+                        }}/>
+                    </div>
+
+                </div>
+               
+                <a href={props.linkedin} target="_blank">
+                    <Image
+                        fill
+                        className={ContactoStyle.linkedin}
+                        src="/linkedin.svg"
+                        alt="Link socialnetwork of the author"
+                        sizes="(min-width: 1200px) 50px, (max-width: 1200px) 100px , 100px"
+                        onClick = { () => {
                         
-                    }}
-                />
+                            
+                        }}
+                    />
+                </a>
                
             </div>
             
-         
     </section>
     )
 }
