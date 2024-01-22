@@ -28,51 +28,51 @@ export default function Home() {
     __v:0,
     _id:""
   });
+
   const habilidades = [
     {
       src: './html.svg',
-      href: "#",
+      href: "https://developer.mozilla.org/es/docs/Web/HTML",
       alt: "icono habilidad html",
       color: ''
     },
     {
       src: './css.svg',
-      href: '#',
+      href: 'https://developer.mozilla.org/es/docs/Web/CSS',
       alt: '',
       color: 'white'
     },
     {
       src: './js.svg',
-      href: '#',
+      href: 'https://developer.mozilla.org/es/docs/Web/JavaScript',
       alt: '',
       color: ''
     },
     {
       src: './react.svg',
-      href: '#',
+      href: 'https://legacy.reactjs.org/docs/getting-started.html',
       alt: '',
       color: ''
     },
     {
       src: './node.svg',
-      href: '#',
+      href: 'https://nodejs.org/docs/latest/api/',
       alt: '',
       color: ''
     },
     {
       src: './mongodb.svg',
-      href: '#',
+      href: 'https://www.mongodb.com/docs/',
       alt: '',
       color: ''
     },
     {
       src: './nextjs.svg',
-      href: '#',
+      href: 'https://nextjs.org/docs',
       alt: '',
       color: 'white'
     },
   ];
-
 
 
   return (
