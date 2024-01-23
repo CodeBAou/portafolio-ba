@@ -12,9 +12,11 @@ interface data {
 }
 
 const Habilidades = (props:data) =>  {
+
     let i = 0;
     let habilidades = props.datos.map((item) => {
-        if(item.color == ''){
+        
+        if(item.color == ''){                                                                                                                                                                                                       
             return <a key={i} href={item.href} target="_blank"><img src={item.src} alt={item.alt} className={Style.img}/></a>
         }else{
             return <a key={i} href={item.href} target="_blank"><img src={item.src} alt={item.alt} className={Style.imgWhite}/></a>
