@@ -53,7 +53,7 @@
 .contentDataPost{
     position:relative;
     width:100%;
-    min-height:400px;
+    min-height:490px;
     display:flex;
     flex-direction:row;
     background-color:#272427;
@@ -71,7 +71,7 @@
 
 .contentMiniatura{
     position:relative;
-    height:379px;
+    height:500px;
     width:50%;
     color:white;
     display:flex;
@@ -90,11 +90,11 @@
     color: white;
     padding-left:5px;
 }
-
+/** 299.19 x 443.22 */
 .miniatura{
     position:relative;
-    width:251px;
-    height:379px;
+    width:299.19px;
+    height:443.22px;
     background-color: black;
     margin-top:5px;
 }

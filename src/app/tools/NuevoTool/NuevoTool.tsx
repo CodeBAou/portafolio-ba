@@ -8,6 +8,7 @@ import P_build from '../../../PostBuild/p_build/P_build';
 import Imagen_build from '../../../PostBuild/imagen_build/Imagen_build';
 import Codigo_build from '../../../PostBuild/codigo_build/Codigo_build';
 import SavePost from '../savePost/SavePost';
+import PostTools from '../PostTools/PostTools';
 
 interface NuevoToolPropsType{
     token:string;
@@ -18,7 +19,6 @@ interface postDataI{
     descripcion:string,
     data:string,
     miniatura:string,
-    url_miniatura:string,
     enlace:string,
     tags:string,
     destacado:boolean,
@@ -36,12 +36,11 @@ interface sectionsDataI{
 
 const NuevoTool = (props:NuevoToolPropsType) => {
 
-    const [ postDATA, setPostDATA ]        = useState<postDataI>({titulo:"",descripcion:"",data:"",url_miniatura:"",miniatura:"",tags:"",enlace:"",destacado:false,orderDestacado:0}); //datos del post {titulo, desc, data, url_miniatura, tags}
+    const [ postDATA, setPostDATA ]        = useState<postDataI>({titulo:"",descripcion:"",data:"",miniatura:"",tags:"",enlace:"",destacado:false,orderDestacado:0}); //datos del post {titulo, desc, data, url_miniatura, tags}
     const [ sectionDATA, setSectionDATA ]  = useState<sectionsDataI[]>([]); // //datos de cada secction , [{id,post,parrafo,img,order,type}, ...]
    
     //Actualiza los estados sectionDATA y sectionsObj
     useEffect( () => {
-        
         
         //nsections.sort( (a,b) => a.order - b.order );
         //setSectionsObj( arrSections );
@@ -142,7 +141,7 @@ const NuevoTool = (props:NuevoToolPropsType) => {
             <div className={Style.tableroEdicionPost}>
 
                 <div className={Style.post} onDrop={drop} onDragOver={allowDrop}>
-                    <HeaderPost_build titulo={postDATA.titulo} descripcion={postDATA.descripcion} miniatura={postDATA.miniatura} data ={postDATA.data} enlace={postDATA.enlace} tags={postDATA.tags}  GetData={setPostDATA}/>
+                    <HeaderPost_build titulo={postDATA.titulo} descripcion={postDATA.descripcion} miniatura={postDATA.miniatura} data ={postDATA.data} enlace={postDATA.enlace} tags={postDATA.tags}  GetData={setPostDATA} />
                     {getCmpSections()}
                 </div>
 

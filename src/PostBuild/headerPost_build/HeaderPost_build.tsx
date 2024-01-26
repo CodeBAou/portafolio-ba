@@ -8,7 +8,8 @@ interface dataPostIprops{
     tags:string,
     enlace:string,
     data:string,
-    miniatura:string
+    miniatura:string,
+    
 }
 
 interface postDataI{
@@ -16,7 +17,6 @@ interface postDataI{
     descripcion:string,
     data:string,
     miniatura:string,
-    url_miniatura:string, 
     enlace:string,
     tags:string,
     destacado:boolean,
@@ -43,7 +43,6 @@ const HeaderPost_build = (props:dataPostIprops) => {
         miniatura:"./MiniaturaMuestra.png",
         enlace:"https://i.pinimg.com/736x/ad/6c/53/ad6c53396f280b56444e6095f39cf447.jpg",
         tags:"",
-        url_miniatura:"",
         destacado:false,
         orderDestacado:0
     });
@@ -71,7 +70,7 @@ const HeaderPost_build = (props:dataPostIprops) => {
                 <div className={Style.contentDesc}>
                     <textarea className={Style.desc} onChange={(e) => setPostData({ ...postData, descripcion:e.currentTarget.value}) } placeholder='Descripcion...' />
                 </div>
-
+               
                 <div className={Style.contentMiniatura}>
                     <input type="text" className={Style.enlace} onChange={(e) => setPostData({ ...postData, miniatura:e.currentTarget.value}) } placeholder='Enlace Miniatura ...'/>
                     <img src={postData.miniatura} alt="image miniatura del post" className={Style.miniatura} />

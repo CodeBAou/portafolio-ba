@@ -2,7 +2,7 @@
 import React ,{useState, useEffect} from 'react';
 import Style from './style.module.css';
 import OneTab from '../../components/google0Auth/onetab';
-import {useSession, signIn, signOut } from 'next-auth/react';
+import {useSession, signIn, signOut, getSession } from 'next-auth/react';
 import Image from 'next/image';
 import Url_config from '../../Url_config';
 import UserTools from '../tools/UserTools/UserTools';
@@ -23,6 +23,9 @@ const AdminPage = () => {
 const url = new Url_config();
 
 useEffect(()=>{
+
+    console.log(session);
+    
     //Se realiza peticion al servidor para con el token para el middleware
     fetch(url.route_auth(),{
         method: 'POST',
@@ -82,11 +85,14 @@ const validate: () => boolean = () => {
 
   
     if ( userDB.token !== "" && status  === "authenticated" && session ){
+        
         return true;
     }
 
     return false;
 }
+
+
 
 if( validate() && session && session.user){
    
@@ -124,8 +130,6 @@ if( validate() && session && session.user){
                 </div>
             </div>
         )
-    
-  
 }
 
 else{
@@ -148,7 +152,7 @@ else{
                        height={30}
                        alt="Picture of the author"
                        onClick={() => {
-                           signIn();
+                            signIn();
                        }}
                        className={Style.img}
                    />  

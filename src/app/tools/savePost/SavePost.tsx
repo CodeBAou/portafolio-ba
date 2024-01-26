@@ -7,7 +7,6 @@ interface postDataI{
     titulo:string,
     descripcion:string,
     data:string,
-    url_miniatura:string,
     tags:string
 }
 
