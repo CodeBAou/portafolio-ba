@@ -13,6 +13,7 @@ interface props{
 export default function Header(props:props){
 
     const words = props.lw1.split(" ");
+    
     return(
         <header className={StyleHeader.content}>
 

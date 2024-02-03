@@ -1,43 +1,34 @@
-.content{
-    position:relative;
-    height:auto;
-    width:100%;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-top:5px;
-    margin-bottom: 5px;
-    padding-top:4px;
-    padding-bottom:4px;
-}
+
+
+
 
 .id{
-    color:rgb(145, 0, 0);
-    margin-right:10px;
+    width:200px;
+    border:1px solid gray;
 }
 
-.nombre {
-    color:white;
-    margin-left:40px;
-    margin-right:50px;
+.titulo{
+    width:100px;
+    border:1px solid gray;
 }
 
-.desc{
-    color:gray;
-    margin-right:50px;
+.descripcion{
+    width:50%;
+    border:1px solid gray;
+}
+
+.tags{
+    width:80px;
+    border:1px solid gray;
 }
 
 .data{
-    color:gray;
-    margin-right:50px;
+    width:200px;
+    border:1px solid gray;
 }
 
-.content:hover{
-    border-top:1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.icon:hover{
-    background-color: black;
+.iconTable{
+    width:30px;
+    margin-left:30px;
+    border:1px solid gray;
 }

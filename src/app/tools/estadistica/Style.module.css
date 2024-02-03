@@ -1,13 +1,22 @@
-.content{
-    position:relative;
-    height:40px;
-    width:100%;
-    padding-left:10px;
+.table{
+    display:flex;
+    flex-direction: row;
 }
 
-.load{
-    color:white;
+.titulo{
+    background-color:gray;
+    color:rgb(37, 37, 37);
+    padding:2px;
+    padding-left:10px;
+    padding-right:10px;
+    font-weight: 500;
+    font-size: 18px;
 }
+
 .data{
-    color:white;
+    background-color: none;
+    padding-left:10px;
+    padding-right:10px;
+    border:1px solid gray;
+    font-weight: 900;
 }

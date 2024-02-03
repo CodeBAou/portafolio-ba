@@ -7,7 +7,7 @@ import Buscador from '../../components/buscador/buscador';
 import TabProyectos from '../../components/tabProyectos/TabProyectos';
 import Url_config from '../../Url_config';
 import ProyectoItem from '../../components/proyectItem/ProyectoItem';
-import PostView from '@/PostView/PostView';
+import { redirect } from 'next/navigation'
 
 interface responsedata{
   _id:string;
@@ -19,6 +19,7 @@ interface responsedata{
 }
 const Proyectos = () => {
 
+  
     const url = new Url_config();
     const [page, setPage] = useState(1);
     const [items,setItems] = useState<responsedata[]>([]);
@@ -54,25 +55,17 @@ const Proyectos = () => {
 
     },[page]);
 
+
     const getItems = () =>  {
 
       return items.map( item => {
-        return <ProyectoItem key={item._id} id={item._id} titulo={item.titulo} desc={item.descripcion} miniatura={item.miniatura} date={item.data}  open={OpenPost}/>
+        return <ProyectoItem key={item._id} id={item._id} titulo={item.titulo} desc={item.descripcion} miniatura={item.miniatura} date={item.data}  />
       });
     }
-
-
-    const OpenPost = (id:string) => {
-        setPostView(<PostView id={id} />)
-    }
-
-    const ClosePost = () => {
-      setPostView(<></>);
-    }
-
+    
     return(
       <>
-        {postVidew}
+        
         <header className={Style.header}>
 
             <Link href="/">

@@ -32,38 +32,53 @@ interface dataSectionsI{
 const PostView = (props:propsPostView) => {
 
     const url                             = new Url_config();
-    const [id,setId]                      = useState("");
+    const [id,setId]                      = useState(props.id);
     const [postData,setPostData]          = useState<dataPostI>();
     const [sectionsData, setSectionsData] = useState<dataSectionsI[]>();
 
     useEffect(() => {
-
-        if(props.id != undefined){
-            fetch( url.route_GetPost(props.id), {
-                method: 'GET',
-                headers: {
+        const fetchData = async () => {
+          try {
+                // Obtener datos del post
+                if (postData?._id === undefined) {
+                const responsePost = await fetch(url.route_GetPost(props.id), {
+                    method: 'GET',
+                    headers: {
                     'Content-Type': 'application/json'
-                }
-            }).then(resultPost => resultPost.json())
-            .then(resultPost=> {
+                    }
+                });
+        
+                const resultPost = await responsePost.json();
                 setPostData(resultPost[0]);
-            });
-    
-    
-            fetch( url.route_GetSections(props.id), {
+            
+      
+                // Obtener datos de las secciones
+                const responseSections = await fetch(url.route_GetSections(props.id), {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 mode: 'cors'
-            }).then( resultSections => resultSections.json())
-                .then( resultSections => {
-                    setSectionsData(resultSections);
-            });
-    
-        }
-       
-    },[props]);
+                });
+        
+                const resultSections = await responseSections.json();
+                setSectionsData(resultSections);
+
+            }
+          } catch (error) {
+            console.error('Error en la solicitud:', error);
+            // Manejar el error según tus necesidades
+          }
+        };
+      
+        fetchData();
+      
+        // Limpieza (opcional)
+        return () => {
+          // Realizar cualquier limpieza necesaria, si es necesario
+        };
+      }, [props.id]);
+      
 
     const getSection = () => {
        if(sectionsData){

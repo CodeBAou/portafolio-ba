@@ -26,7 +26,8 @@ useEffect(()=>{
 
     console.log(session);
     
-    //Se realiza peticion al servidor para con el token para el middleware
+    if(session){
+          //Se realiza peticion al servidor para con el token para el middleware
     fetch(url.route_auth(),{
         method: 'POST',
         mode: 'cors',
@@ -62,6 +63,8 @@ useEffect(()=>{
             role:0
          });
     });
+    }
+  
 
 },[session])
   
@@ -94,7 +97,7 @@ const validate: () => boolean = () => {
 
 
 
-if( validate() && session && session.user){
+if( session && session.user && session.user.name){
    
          //Existe un token por lo que el servidor valido el usuario
 

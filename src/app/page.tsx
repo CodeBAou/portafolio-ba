@@ -139,35 +139,42 @@ export default function Home() {
 
         <LayoutSection>
           <LayoutList>
-            <Image
-              src="/js.svg"
-              width={50}
-              height={50}
-              alt="react icon"
-            />
 
-            <Image
-              src="/angular.svg"
-              width={50}
-              height={50}
-              alt="react icon"
-            />
+            <div className={styles.IconsGroups}>
+              
+                <Image
+                  src="/js.svg"
+                  width={50}
+                  height={50}
+                  alt="react icon"
+                />
 
-            <Image
-              src="/node.svg"
-              width={50}
-              height={50}
-              alt="react icon"
-            />
+                <Image
+                  src="/angular.svg"
+                  width={50}
+                  height={50}
+                  alt="react icon"
+                />
 
-            <Image
-              src="/mongodb.svg"
-              width={50}
-              height={50}
-              alt="react icon"
-            />
+                <Image
+                  src="/node.svg"
+                  width={50}
+                  height={50}
+                  alt="react icon"
+                />
 
+                <Image
+                  src="/mongodb.svg"
+                  width={50}
+                  height={50}
+                  alt="react icon"
+                />
+
+                
+            </div>
+            
             <p className={styles.normal2}> Desarrollo en javascript , angular, node y mongodb <span className={styles.textblue}>udemy</span></p>
+            
           </LayoutList>
         </LayoutSection>
 

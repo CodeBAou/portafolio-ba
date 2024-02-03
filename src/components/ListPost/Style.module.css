@@ -1,0 +1,18 @@
+.content{
+    position:relative;
+    width:100%;
+}
+
+.table{
+    position:relative;
+    width:100%;
+}
+.th{
+    background-color: gray;
+    border:1px solid white;
+}
+
+
+.tr{
+    border:1px solid white;
+}

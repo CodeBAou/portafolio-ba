@@ -66,9 +66,18 @@ const ListPost = (props:ListPostProps) => {
     
     return(
         <div className={Style.content}> 
-            <div className={Style.tab}>
-               {posts}
-            </div>
+     
+               <table className={Style.table}>
+                    <tr>
+                        <th className={Style.th}>ID</th>
+                        <th className={Style.th}>Titulo</th>
+                        <th className={Style.th}>Descripcion</th>
+                        <th className={Style.th}>Data</th>
+                        <th className={Style.th}>Tags</th>
+                    </tr>
+                    {posts}
+               </table>
+
         </div>
     )
 }

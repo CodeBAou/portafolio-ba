@@ -10,32 +10,17 @@ interface  StatusToolType{
 
 /**
  * Listan las estadisticas de la base de datos
- * 
  */
 const StatusTool = (props:StatusToolType) => {
 
     const [dataEst, setDataEst]= useState({total_posts:"?"});
     const [limit, setLimit] = useState(0);//numero de posts que se listan
-
+    const urls = new Url_config();
+    
     useEffect(()=>{
 
-        const urls = new Url_config();
         setLimit(urls.limite_Tabulacion_postlist);
-
-        if(dataEst.total_posts == "?"){
-            fetch(urls.route_estadisticas(),{
-                method:'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            }).then( res => {
-               res.json().then( res => setDataEst(res))
-            }).catch( err => {
-                setDataEst({total_posts:"-"});
-            });
-    
-        }
-      
+        
     },[]);
 
     return(
@@ -48,7 +33,7 @@ const StatusTool = (props:StatusToolType) => {
             </nav>
             
             <div className={Style.TableroTools}>
-               <Estadistica totalPages={dataEst.total_posts}/>
+               <Estadistica />
                <ListPost totalPages={dataEst.total_posts} limit={limit} token={props.token}/>
             </div>
         </div>

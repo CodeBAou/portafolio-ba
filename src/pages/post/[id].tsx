@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import PostView from '../../PostView/PostView';
 import Style from './style.module.css';
 
+
+
 function PostPage() {
 
   const router = useRouter();

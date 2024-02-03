@@ -16,32 +16,28 @@ interface dataItemPostListTYPE{
 
 const StatusPostItemList = (props:dataItemPostListTYPE) => {
     return(
-        <div className={Style.content}>
-
-            <span className={Style.id}>{props.id}</span> 
-            <span className={Style.nombre}>{props.titulo}</span> 
-            <span className={Style.desc}>{props.desc}</span>
-            <span className={Style.data}>{props.data}</span> 
-            <span className={Style.data}>{props.tags}</span>
-
-            <Image
-                src='./eye.svg'
-                alt="icon ver"
-                width={20} 
-                height={20} 
-                className={Style.icon}
-            />
-
-            <Image
-                src='./editar.svg'
-                alt="icon editar"
-                width={18} 
-                height={18} 
-                className={Style.icon}
-            />
-
-            <DeletePost idPost={props.id} postsFN={ props.postsFN } token={props.token}/>
-        </div>
+        <tr className={Style.tr}>
+            <td className={Style.id}>{props.id}</td>
+            <td className={Style.titulo}>{props.titulo}</td>
+            <td className={Style.descripcion}>{props.desc}</td>
+            <td className={Style.data}>{props.data}</td>
+            <td className={Style.tags}>{props.tags}</td>
+            <td className={Style.iconTable}> 
+                <Image
+                    src='./eye.svg'
+                    alt="icon ver"
+                    width={20} 
+                    height={20} 
+                    className={Style.icon}
+                />
+            </td>
+            <td className={Style.iconTable}>
+               
+            </td>
+            <td className={Style.iconTable}>
+                <DeletePost idPost={props.id} postsFN={ props.postsFN } token={props.token}/>
+            </td>
+        </tr>
     )
 }
 

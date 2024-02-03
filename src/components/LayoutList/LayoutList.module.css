@@ -12,17 +12,22 @@
     padding-right:5%;
     padding-top:20px;
     padding-bottom:20px;
+    padding-left:5%;
 }
-
 
 .textblue{
     color:#0964C3;
 }
 
-
-    .content{
-        padding-left:5%;
+@media(max-width:768px){
+   
+    .content > .IconsGroups{
+        width:20%;
+        height:auto;
+        display:flex;
+        flex-direction:row;
     }
+}
     
 
 
