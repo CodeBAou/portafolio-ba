@@ -23,27 +23,26 @@
  }
 
  .img{
-    opacity:0.4;
+    opacity:0.3;
     width: 100%;
     min-width:299.19;
     position:relative;
     height:100% !important;
+    border-radius:8%;
  }
-
-
-
-
 
  .title{
    position:relative;
    color:white;
-   font-size:2rem;
+   font-size:1.6rem;
    position:absolute;
    top:90%;
    left:10%;
-   box-shadow: 10px 5px 5px rgb(56, 56, 56);
+   
    text-shadow: 10px 5px 5px black;
-   margin-top:-4rem;
+   margin-top:-6rem;
+   width:70%;
+   height:50%;
    
  }
 

@@ -6,13 +6,14 @@
 .table{
     position:relative;
     width:100%;
+    border-collapse: collapse;
+    border-color: bisque;
+    margin-top:20px;
 }
+
 .th{
     background-color: gray;
-    border:1px solid white;
+    padding: 10px;
 }
 
 
-.tr{
-    border:1px solid white;
-}

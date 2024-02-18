@@ -7,7 +7,6 @@ import Image from 'next/image';
 
 interface propsPostView{
     id:string;
-    
 }
 
 interface dataPostI{
@@ -37,11 +36,12 @@ const PostView = (props:propsPostView) => {
     const [sectionsData, setSectionsData] = useState<dataSectionsI[]>();
 
     useEffect(() => {
+
         const fetchData = async () => {
           try {
                 // Obtener datos del post
                 if (postData?._id === undefined) {
-                const responsePost = await fetch(url.route_GetPost(props.id), {
+                const responsePost = await fetch( url.route_GetPost(props.id), {
                     method: 'GET',
                     headers: {
                     'Content-Type': 'application/json'
@@ -81,9 +81,12 @@ const PostView = (props:propsPostView) => {
       
 
     const getSection = () => {
+        
        if(sectionsData){
             return sectionsData?.map( section => {
+
                 switch(section.type){
+
                     case 1:
                         return <h3 key={section._id} className={Style.tituloSection}>{section.text}</h3>
                         break;
@@ -103,7 +106,7 @@ const PostView = (props:propsPostView) => {
 
     return(
         <>
-            <Link href="/">
+            <Link href="/proyectos">
                 <Image 
                     src="/arrowBack.svg"
                     width={50}

@@ -73,20 +73,19 @@
 /* Estilo de la barra de desplazamiento */
 .scrollbar-container {
     display:none;
-    
   }
   
-  .scrollbar-container::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de desplazamiento */display:none;
-  }
-  
-  .scrollbar-container::-webkit-scrollbar-thumb {
-    display:none;
-  }
-  
-  .scrollbar-container::-webkit-scrollbar-track {
-    display:none;
-  }
+.scrollbar-container::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */display:none;
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb {
+  display:none;
+}
+
+.scrollbar-container::-webkit-scrollbar-track {
+  display:none;
+}
 
 .iconBack{
     position: absolute;

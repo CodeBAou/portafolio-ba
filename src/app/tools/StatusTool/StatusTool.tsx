@@ -18,9 +18,7 @@ const StatusTool = (props:StatusToolType) => {
     const urls = new Url_config();
     
     useEffect(()=>{
-
-        setLimit(urls.limite_Tabulacion_postlist);
-        
+        setLimit( urls.limite_Tabulacion_postlist );
     },[]);
 
     return(

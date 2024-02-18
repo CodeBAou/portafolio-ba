@@ -235,9 +235,10 @@ export default function Home() {
           <Link href="/adminPage">
             <Image
               src="/admin-icon.svg"
-              width={50}
-              height={50}
+              width={80}
+              height={80}
               alt="admin icon"
+              className={styles.iconACCES}
             />
           </Link>
         </div>

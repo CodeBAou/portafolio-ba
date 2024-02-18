@@ -4,6 +4,7 @@ import PostView from '../../PostView/PostView';
 import Style from './style.module.css';
 
 
+//https://nextjs.org/docs/app/api-reference/functions/use-params
 
 function PostPage() {
 
