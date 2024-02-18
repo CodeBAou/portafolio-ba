@@ -9,8 +9,8 @@ class Url_config {
       this.port                       = 3005;//Server port
       this.api                        = '/codebaouapi';
       this.limite_Tabulacion_postlist = 15; //Numero max de post que se listan 
-      this.base                       = `http://${this.host}:${this.port}${this.api}`; //URL BASE URL HOST + PORT
-      //this.base = `https://codebaou-page-backend.vercel.app${this.api}`
+      //this.base                       = `http://${this.host}:${this.port}${this.api}`; //URL BASE URL HOST + PORT
+      this.base = `https://codebaou-page-backend.vercel.app${this.api}`
   }
   
   //ROUTES
